@@ -53,9 +53,9 @@ jobs:
         with:
           node-version: "${{ needs.init.outputs.NODE_VERSION }}"
 
-      - name: Install Packages
-        run: |
-          npm ci
+#       - name: Install Packages
+#         run: |
+#           npm ci
       - name: build
         run:  echo "Stage release"
   
@@ -67,14 +67,31 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-
       - uses: actions/setup-node@v1
         with:
           node-version: "${{ needs.init.outputs.NODE_VERSION }}"
 
-      - name: Install Packages
-        run: |
-          npm ci
+#       - name: Install Packages
+#         run: |
+#           npm ci
       - name: build
         run:  echo "Prod release"
+  release:
+    needs: [init, deploy-production] 
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "${{ needs.init.outputs.NODE_VERSION }}"
+      - name: Install Packages
+        run:  npm ci
+      - name: Deploy Files
+        run: |
+          git config user.name ${{ secrets.GH_USER }}
+          git config user.email "${{ secrets.GH_MAIL }}"
+          npx standard-version
+          git push --follow-tags origin main
+          
+        
 
