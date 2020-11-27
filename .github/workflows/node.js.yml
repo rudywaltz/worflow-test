@@ -39,3 +39,42 @@ jobs:
           npm ci
       - name: Run unit ${{ matrix.script }}
         run: npm run ${{ matrix.script }}
+  
+  deploy-staging:
+    if: github.ref == 'refs/heads/main'
+    needs:
+      - init
+      - tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "${{ needs.init.outputs.NODE_VERSION }}"
+
+      - name: Install Packages
+        run: |
+          npm ci
+      - name: build
+        run:  echo "Stage release"
+  
+  deploy-production:
+    if: github.ref == 'refs/heads/production'
+    needs:
+      - init
+      - tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "${{ needs.init.outputs.NODE_VERSION }}"
+
+      - name: Install Packages
+        run: |
+          npm ci
+      - name: build
+        run:  echo "Prod release"
+
