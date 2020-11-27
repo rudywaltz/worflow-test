@@ -80,7 +80,11 @@ jobs:
     needs: [init, deploy-staging] 
     runs-on: ubuntu-latest
     steps:
-      - name: npm install
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "${{ needs.init.outputs.NODE_VERSION }}"
+      - name: Install Packages
         run:  npm ci
       - name: Deploy Files
         run: |
