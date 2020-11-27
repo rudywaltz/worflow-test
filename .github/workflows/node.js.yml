@@ -49,12 +49,16 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: go-semantic-release/action@v1
-      - uses: actions/setup-node@v1
         with:
-          node-version: "${{ needs.init.outputs.NODE_VERSION }}"
-          github-token: ${{ secrets.GH_TOKEN }}
-          update-file: package.json
-        id: semrel
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+    
+#       - uses: actions/checkout@v2
+#       - uses: go-semantic-release/action@v1
+#       - uses: actions/setup-node@v1
+#         with:
+#           node-version: "${{ needs.init.outputs.NODE_VERSION }}"
+#           github-token: ${{ secrets.GH_TOKEN }}
+#           update-file: package.json
 #       - name: Install Packages
 #         run: |
 #           npm ci
