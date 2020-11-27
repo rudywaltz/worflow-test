@@ -67,7 +67,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-
       - uses: actions/setup-node@v1
         with:
           node-version: "${{ needs.init.outputs.NODE_VERSION }}"
@@ -78,7 +77,7 @@ jobs:
       - name: build
         run:  echo "Prod release"
   release:
-    needs: [deploy-staging] 
+    needs: [init, deploy-staging] 
     runs-on: ubuntu-latest
     steps:
       - name: npm install
