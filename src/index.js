@@ -2,5 +2,5 @@ function sum(a, b) {
   return a + b;
 }
 
-console.warn('hello')
+console.info('hello')
 module.exports = sum;
