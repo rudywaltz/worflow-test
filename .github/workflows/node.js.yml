@@ -53,9 +53,9 @@ jobs:
         with:
           node-version: "${{ needs.init.outputs.NODE_VERSION }}"
 
-      - name: Install Packages
-        run: |
-          npm ci
+#       - name: Install Packages
+#         run: |
+#           npm ci
       - name: build
         run:  echo "Stage release"
   
@@ -71,13 +71,13 @@ jobs:
         with:
           node-version: "${{ needs.init.outputs.NODE_VERSION }}"
 
-      - name: Install Packages
-        run: |
-          npm ci
+#       - name: Install Packages
+#         run: |
+#           npm ci
       - name: build
         run:  echo "Prod release"
   release:
-    needs: [init, deploy-staging] 
+    needs: [init, deploy-production] 
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
