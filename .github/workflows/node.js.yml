@@ -48,11 +48,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-
+      - uses: go-semantic-release/action@v1
       - uses: actions/setup-node@v1
         with:
           node-version: "${{ needs.init.outputs.NODE_VERSION }}"
-
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          update-file: package.json
+        id: semrel
 #       - name: Install Packages
 #         run: |
 #           npm ci
@@ -70,7 +72,6 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: "${{ needs.init.outputs.NODE_VERSION }}"
-
 #       - name: Install Packages
 #         run: |
 #           npm ci
