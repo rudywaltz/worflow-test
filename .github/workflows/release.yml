@@ -1,0 +1,13 @@
+on:
+  push:
+    # Pattern matched against refs/tags
+    tags:        
+      - '*'           # Push events to every tag
+     
+ jobs:
+  init:
+    runs-on: ubuntu-latest
+  steps:
+    - name: Hello
+    run: |
+          echo: "kukac"
