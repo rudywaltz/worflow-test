@@ -1,6 +1,6 @@
 name: CI
 
-on: 
+on:
   push:
     tags-ignore: 
       - '*'
@@ -22,7 +22,7 @@ jobs:
         id: engines
         run: |
           echo "::set-output name=NODE_VERSION::$(jq -r '.engines.node' package.json)"
-          
+
   tests:
     runs-on: ubuntu-latest
     needs:
@@ -42,7 +42,7 @@ jobs:
           npm ci
       - name: Run unit ${{ matrix.script }}
         run: npm run ${{ matrix.script }}
-  
+
   deploy-staging:
     if: github.ref == 'refs/heads/main'
     needs:
