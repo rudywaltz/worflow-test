@@ -2,7 +2,8 @@ name: CI
 
 on:
   push:
-    tags-ignore: "v*"
+    tags-ignore: 
+      - v*
 
 env:
   CI_REPO_NAME: ${{ github.repository }}
