@@ -4,10 +4,10 @@ on:
     tags:        
       - '*'           # Push events to every tag
      
- jobs:
+jobs:
   init:
     runs-on: ubuntu-latest
-  steps:
-    - name: Hello
-    run: |
+    steps:
+      - name: Hello
+        run: |
           echo: "kukac"
