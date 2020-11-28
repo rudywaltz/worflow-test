@@ -9,5 +9,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Hello
-        run: |
-          echo: "kukac"
+        run:  echo "Prod release"
