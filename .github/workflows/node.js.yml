@@ -1,10 +1,7 @@
 name: CI
 
 on:
-  push:
-    branches-ignore:
-      # Push events to branches matching refs/heads/mona/octocat
-      - 'v*'
+  push
 
 env:
   CI_REPO_NAME: ${{ github.repository }}
