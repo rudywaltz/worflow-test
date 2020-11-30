@@ -1,12 +1,14 @@
 on:
-  push:
-    # Pattern matched against refs/tags
-    tags:        
-      - v*           # Push events to every tag
-     
+ push:
+   branches:
+     - main
+name: release-please
 jobs:
-  init:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Hello
-        run:  echo "Prod release"
+ release-please:
+   runs-on: ubuntu-latest
+   steps:
+     - uses: GoogleCloudPlatform/release-please-action@v2
+       with:
+         token: ${{ secrets.GITHUB_TOKEN }}
+         release-type: node
+         package-name: release-please-action
