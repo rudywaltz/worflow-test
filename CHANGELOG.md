@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://www.github.com/rudywaltz/worflow-test/compare/v1.0.0...v2.0.0) (2020-12-01)
+
+
+### ⚠ BREAKING CHANGES
+
+* **workflow:** rename package
+
+### Features
+
+* **test:** release? ([d5da55e](https://www.github.com/rudywaltz/worflow-test/commit/d5da55e1a65f352fc01fe933a37f12e92afc15f2))
+* **workflow:** rename package ([acfc224](https://www.github.com/rudywaltz/worflow-test/commit/acfc22428c22c1d4db8a981f08f1329f42c52efb))
+
+
+### Bug Fixes
+
+* **test:** spacing ([b07f61d](https://www.github.com/rudywaltz/worflow-test/commit/b07f61d5f4ee2a02af97565de0b17dc170d1c2f8))
+
 ## 1.0.0 (2020-11-30)
 
 
