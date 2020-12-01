@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://www.github.com/rudywaltz/worflow-test/compare/v2.0.0...v2.1.0) (2020-12-01)
+
+
+### Features
+
+* **workflow:** release name ([d191155](https://www.github.com/rudywaltz/worflow-test/commit/d191155a38fc528b4695de1f1fd24c253327000d))
+
 ## [2.0.0](https://www.github.com/rudywaltz/worflow-test/compare/v1.0.0...v2.0.0) (2020-12-01)
 
 
