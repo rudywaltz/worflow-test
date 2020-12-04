@@ -30,4 +30,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
        - run: echo "prod"
-       - run: echo ${{needs.init.outputs.TAG_VERSION}}
+       - run: echo "${{needs.init.outputs.TAG_VERSION}}"
