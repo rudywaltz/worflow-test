@@ -3,7 +3,7 @@ name: release-tag
 on:
   push:
     tags: 
-      - "v*"
+      - "*"
 
 env:
   CI_REPO_NAME: ${{ github.repository }}
