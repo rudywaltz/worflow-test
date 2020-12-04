@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.1.1](https://www.github.com/rudywaltz/worflow-test/compare/v2.1.0...v2.1.1) (2020-12-04)
+
+
+### Bug Fixes
+
+* **config:** delete releaserc ([9568aa9](https://www.github.com/rudywaltz/worflow-test/commit/9568aa96d44cc1d3d7fb16524608d0864f65c9b4))
+* **test:** broken ([fe10ba2](https://www.github.com/rudywaltz/worflow-test/commit/fe10ba2110b7aed8c34d7930899f8a54ac108651))
+* **workflow:** react on PR ([159e8a9](https://www.github.com/rudywaltz/worflow-test/commit/159e8a9a4647f1c19fc1e60d53faa0b3eab7546a))
+
 ## [2.1.0](https://www.github.com/rudywaltz/worflow-test/compare/v2.0.0...v2.1.0) (2020-12-01)
 
 
