@@ -27,6 +27,8 @@ jobs:
           
 
   deploy-prod:
+    needs:
+      - init
     runs-on: ubuntu-latest
     steps:
        - run: |
