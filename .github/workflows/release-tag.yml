@@ -1,9 +1,9 @@
 name: release-tag
 
 on:
-  release:
-    # Only use the types keyword to narrow down the activity types that will trigger your workflow.
-    types: [published, created, edited]
+  push:
+    tags: 
+      - "v*"
 
 env:
   CI_REPO_NAME: ${{ github.repository }}
