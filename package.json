@@ -10,7 +10,8 @@
     "standard-version": "^9.0.0"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "deploy": "node scripts/deploy.js"
   },
   "repository": {
     "type": "git",
