@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.2.1](https://www.github.com/rudywaltz/worflow-test/compare/v3.2.0...v3.2.1) (2020-12-04)
+
+
+### Bug Fixes
+
+* **workflow:** react no tags ([48045e8](https://www.github.com/rudywaltz/worflow-test/commit/48045e87a17cc5621ca75e55c51751beade2f3c9))
+
 ## [3.2.0](https://www.github.com/rudywaltz/worflow-test/compare/v3.1.0...v3.2.0) (2020-12-04)
 
 
