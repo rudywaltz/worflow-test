@@ -21,7 +21,7 @@ jobs:
       - name: Set Node version
         id: engines
         run: |
-          echo "::set-output name=NODE_VERSION::$(jq -r 'version' package.json)"
+          echo "::set-output name=NODE_VERSION::$(jq -r 'engines.node' package.json)"
 
   deploy-prod:
     runs-on: ubuntu-latest
