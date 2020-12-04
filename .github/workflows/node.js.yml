@@ -11,7 +11,7 @@ env:
 
 jobs:
   init:
-    if: !contains(github.event.head_commit.title, 'rudywaltz/release-v')
+    if: "!contains(github.event.head_commit.title, 'rudywaltz/release-v')"
     runs-on: ubuntu-latest
     outputs:
       NODE_VERSION: ${{steps.engines.outputs.NODE_VERSION}}
