@@ -4,8 +4,7 @@ on:
   release:
     types: # This configuration does not affect the page_build event above
       - created
-      - published
-      - edited
+        
 env:
   CI_REPO_NAME: ${{ github.repository }}
   CI_COMMIT_ID: ${{ github.sha }}
