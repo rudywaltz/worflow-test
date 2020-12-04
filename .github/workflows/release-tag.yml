@@ -1,9 +1,8 @@
 name: release-tag
 
 on:
-  push:
-    tags: 
-      - "*"
+  release:
+    types: [created]
 
 env:
   CI_REPO_NAME: ${{ github.repository }}
