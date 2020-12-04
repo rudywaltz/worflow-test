@@ -15,6 +15,7 @@ jobs:
     outputs:
       NODE_VERSION: ${{steps.engines.outputs.NODE_VERSION}}
       CACHE_KEY: ${{steps.cache.outputs.CACHE_KEY}}
+      TAG_VERSION: ${{steps.engines.outputs.TAG_VERSION}}
     steps:
       - uses: actions/checkout@v2
 
