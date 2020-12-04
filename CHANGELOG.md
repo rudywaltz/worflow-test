@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.1.0](https://www.github.com/rudywaltz/worflow-test/compare/v5.0.0...v5.1.0) (2020-12-04)
+
+
+### Features
+
+* fix ([c181b36](https://www.github.com/rudywaltz/worflow-test/commit/c181b36cd075f985474c425983e74c0ded7d3ad8))
+
+
+### Bug Fixes
+
+* fix ([20a00fe](https://www.github.com/rudywaltz/worflow-test/commit/20a00fe76e4f139f47ff868a631d9a88f963f720))
+* **workflow:** skip PR ([eed27ff](https://www.github.com/rudywaltz/worflow-test/commit/eed27ff6928270992f659b8e3a60ad9bd6a29014))
+
 ## [5.0.0](https://www.github.com/rudywaltz/worflow-test/compare/v4.0.0...v5.0.0) (2020-12-04)
 
 
