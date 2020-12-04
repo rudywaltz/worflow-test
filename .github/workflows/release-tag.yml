@@ -14,8 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       NODE_VERSION: ${{steps.engines.outputs.NODE_VERSION}}
-      CACHE_KEY: ${{steps.cache.outputs.CACHE_KEY}}
       TAG_VERSION: ${{steps.engines.outputs.TAG_VERSION}}
+      CACHE_KEY: ${{steps.cache.outputs.CACHE_KEY}}
     steps:
       - uses: actions/checkout@v2
 
@@ -29,5 +29,6 @@ jobs:
   deploy-prod:
     runs-on: ubuntu-latest
     steps:
-       - run: echo "prod"
-       - run: echo "${{needs.init.outputs.TAG_VERSION}}"
+       - run: |
+          echo "${{needs.init.outputs.TAG_VERSION}}"
+          echo "prod"
