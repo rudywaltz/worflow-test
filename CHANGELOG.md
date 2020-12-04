@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.6.0](https://www.github.com/rudywaltz/worflow-test/compare/v3.5.0...v3.6.0) (2020-12-04)
+
+
+### Features
+
+* qqq ([4a2f69b](https://www.github.com/rudywaltz/worflow-test/commit/4a2f69b0f16509c513d47d8d401639a1734de4a7))
+
 ## [3.5.0](https://www.github.com/rudywaltz/worflow-test/compare/v3.4.1...v3.5.0) (2020-12-04)
 
 
