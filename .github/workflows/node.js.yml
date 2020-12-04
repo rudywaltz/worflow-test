@@ -1,7 +1,6 @@
 name: CI
 
-on:
-  [push, pull_request]
+on: push
 
 env:
   CI_REPO_NAME: ${{ github.repository }}
@@ -48,17 +47,8 @@ jobs:
       - tests
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-#       - uses: actions/checkout@v2
-#       - uses: go-semantic-release/action@v1
-#       - uses: actions/setup-node@v1
-#         with:
-#           node-version: "${{ needs.init.outputs.NODE_VERSION }}"
-#           github-token: ${{ secrets.GH_TOKEN }}
-#           update-file: package.json
-#       - name: Install Packages
-#         run: |
-#           npm ci
-      - name: build
-        run:  echo "Stage release"
+       - uses: GoogleCloudPlatform/release-please-action@v2
+         with:
+           token: ${{ secrets.GITHUB_TOKEN }}
+           release-type: node
 
