@@ -3,7 +3,7 @@ name: release-tag
 on:
   push:
     branches:
-      - master
+      - main
     tags:
       - "*"
 env:
