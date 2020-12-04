@@ -14,7 +14,6 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       NODE_VERSION: ${{steps.engines.outputs.NODE_VERSION}}
-      TAG_VERSION: ${{steps.engines.outputs.TAG_VERSION}}
       CACHE_KEY: ${{steps.cache.outputs.CACHE_KEY}}
     steps:
       - uses: actions/checkout@v2
@@ -23,7 +22,6 @@ jobs:
         id: engines
         run: |
           echo "::set-output name=NODE_VERSION::$(jq -r '.engines.node' package.json)"
-          echo "::set-output name=TAG_VERSION::$(jq -r '.version' package.json)"
           
 
   tests:
@@ -42,8 +40,6 @@ jobs:
           node-version: "${{ needs.init.outputs.NODE_VERSION }}"
       - name: Install Packages
         run: |
-          echo github.event.head_commit
-          echo "${{needs.init.outputs.TAG_VERSION}}"
           npm ci
       - name: Run unit ${{ matrix.script }}
         run: npm run ${{ matrix.script }}
@@ -66,5 +62,17 @@ jobs:
        - uses: GoogleCloudPlatform/release-please-action@v2
          with:
            token: ${{ secrets.GH_ACTION_TOKEN }}
+           witch: release-pr
+           release-type: node
+     
+  release-please2:
+    needs:
+      - init
+    runs-on: ubuntu-latest
+    steps:
+       - uses: GoogleCloudPlatform/release-please-action@v2
+         with:
+           token: ${{ secrets.GH_ACTION_TOKEN }}
+           witch: github-release
            release-type: node
 
