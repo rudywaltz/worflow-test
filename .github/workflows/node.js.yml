@@ -22,6 +22,8 @@ jobs:
         id: engines
         run: |
           echo "::set-output name=NODE_VERSION::$(jq -r '.engines.node' package.json)"
+          echo "$(jq -r '.' package.json)"
+          
 
   tests:
     runs-on: ubuntu-latest
