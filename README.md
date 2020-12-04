@@ -1,3 +1,3 @@
 # workflow-test
 
-maybe I have release notes, aaaand changelog
+maybe I have release notes, and changelog
