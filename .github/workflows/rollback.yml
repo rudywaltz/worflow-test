@@ -16,7 +16,7 @@ jobs:
          -d '{ "name":"${{ secrets.PACKAGE_NAME }}", "revision":"latest", "target": "${{ secrets.REDIRECTOR_TARGET }}/${{ secrets.PACKAGE_NAME }}/${{ github.event.inputs.revision }}" }' \
          -H "Content-Type: application/json" \
          -H "x-auth: ${{ secrets.REDIRECTOR_SECRET }}"; then
-         echo "Successful rollback, new revision: ${{revision}}"
+         echo "Successful rollback, new revision: ${{ github.event.inputs.revision }}"
        else
         echo "Rolback was unsuccessful!"
         exit 1
