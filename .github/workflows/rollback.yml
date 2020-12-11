@@ -12,10 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-       if curl --fail ${{ REDIRECTOR_ROUTE }} -X PUT \
-         -d '{ "name":"${{ PACKAGE_NAME }}", "revision":"latest", "target": "${{ REDIRECTOR_TARGET }}/${{ PACKAGE_NAME }}/${{ github.event.inputs.revision }}" }' \
+       if curl --fail ${{ secrets.REDIRECTOR_ROUTE }} -X PUT \
+         -d '{ "name":"${{ secrets.PACKAGE_NAME }}", "revision":"latest", "target": "${{ secrets.REDIRECTOR_TARGET }}/${{ Psecrets.ACKAGE_NAME }}/${{ github.event.inputs.revision }}" }' \
          -H "Content-Type: application/json" \
-         -H "x-auth: ${{ REDIRECTOR_SECRET }}"; then
+         -H "x-auth: ${{ secrets.REDIRECTOR_SECRET }}"; then
          echo "Successful rollback, new revision: ${{revision}}"
        else
         echo "Rolback was unsuccessful!"
