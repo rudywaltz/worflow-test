@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.8.0](https://www.github.com/rudywaltz/worflow-test/compare/v5.7.0...v5.8.0) (2020-12-10)
+
+
+### Features
+
+* **workflow:** add rollback file ([0585968](https://www.github.com/rudywaltz/worflow-test/commit/0585968eb07c2832a9456c22c2e9ac04da775e59))
+
 ## [5.6.0](https://www.github.com/rudywaltz/worflow-test/compare/v5.5.0...v5.6.0) (2020-12-04)
 
 
