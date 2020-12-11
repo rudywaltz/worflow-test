@@ -3,18 +3,22 @@ on:
   workflow_dispatch:
     inputs:
       name:
-        description: 'Person to greet'
+        description: 'Revision'
         required: true
-        default: 'Mona the Octocat'
-      home:
-        description: 'location'
-        required: false
-        default: 'The Octoverse'
+        default: ''
 
 jobs:
   say_hello:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        echo "Hello ${{ github.event.inputs.name }}!"
-        echo "- in ${{ github.event.inputs.home }}!"
+       if curl --fail ${{ REDIRECTOR_ROUTE }} -X PUT \
+         -d '{ "name":"${{ PACKAGE_NAME }}", "revision":"latest", "target": "${{ REDIRECTOR_TARGET }}/${{ PACKAGE_NAME }}/${{ github.event.inputs.revision }}" }' \
+         -H "Content-Type: application/json" \
+         -H "x-auth: ${{ REDIRECTOR_SECRET }}"; then
+         echo "Successful rollback, new revision: ${{revision}}"
+       else
+        echo "Rolback was unsuccessful!"
+        exit 1
+       fi;
+
